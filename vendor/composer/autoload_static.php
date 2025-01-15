@@ -39,9 +39,9 @@ class ComposerStaticInitb5bca927d58fa4b3fa20431ee0bfbb01
         'srag\\LibrariesNamespaceChanger\\UpdatePluginReadme' => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src/UpdatePluginReadme.php',
     );
 
-    public static function getInitializer(ClassLoader $loader)
+    public static function getInitializer(ClassLoader $loader): \Closure
     {
-        return \Closure::bind(function () use ($loader) {
+        return \Closure::bind(function () use ($loader): void {
             $loader->prefixLengthsPsr4 = ComposerStaticInitb5bca927d58fa4b3fa20431ee0bfbb01::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitb5bca927d58fa4b3fa20431ee0bfbb01::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInitb5bca927d58fa4b3fa20431ee0bfbb01::$classMap;

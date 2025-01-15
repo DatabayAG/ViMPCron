@@ -11,15 +11,11 @@ use srag\Plugins\ViMP\Cron\ViMPJob;
  */
 class ilViMPCronPlugin extends ilCronHookPlugin
 {
-
     //use DICTrait;
 
-    const PLUGIN_CLASS_NAME = ilViMPPlugin::class;
-    const PLUGIN_ID = "xvmpcron";
-    const PLUGIN_NAME = "ViMPCron";
-    /**
-     * @var self|null
-     */
+    public const PLUGIN_CLASS_NAME = ilViMPPlugin::class;
+    public const PLUGIN_ID = "xvmpcron";
+    public const PLUGIN_NAME = "ViMPCron";
     protected static ?ilViMPCronPlugin $instance = null;
 
 
@@ -31,17 +27,16 @@ class ilViMPCronPlugin extends ilCronHookPlugin
         global $DIC;
         $this->db = $DIC->database();
         parent::__construct(
-            $this->db, $DIC["component.repository"], self::PLUGIN_ID
+            $this->db,
+            $DIC["component.repository"],
+            self::PLUGIN_ID
         );
     }
 
 
-    /**
-     * @return self
-     */
-    public static function getInstance() : self
+    public static function getInstance(): self
     {
-        if (self::$instance === null) {
+        if (!self::$instance instanceof \ilViMPCronPlugin) {
             self::$instance = new self();
         }
 
@@ -52,7 +47,7 @@ class ilViMPCronPlugin extends ilCronHookPlugin
     /**
      * @inheritDoc
      */
-    public function getPluginName() : string
+    public function getPluginName(): string
     {
         return self::PLUGIN_NAME;
     }
@@ -70,7 +65,7 @@ class ilViMPCronPlugin extends ilCronHookPlugin
     /**
      * @inheritDoc
      */
-    public function getCronJobInstances() : array
+    public function getCronJobInstances(): array
     {
         return [
             new ViMPJob()

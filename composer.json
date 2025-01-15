@@ -15,7 +15,7 @@
     "issues": "https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_PLVIMP"
   },
   "require": {
-    "php": ">=7.0",
+    "php": ">=7.4",
     "srag/librariesnamespacechanger": ">=0.1.0"
   },
   "autoload": {
