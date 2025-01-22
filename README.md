@@ -3,7 +3,7 @@
 This is an open source project forked from https://github.com/fluxapps/ViMPCron
 
 ## Installation
-First install and enable [ViMP](https://github.com/E-Learning-FHDO/ViMP).
+First install and enable [ViMP](https://github.com/DatabayAG/ViMP).
 
 Start at your ILIAS root directory
 ```bash
